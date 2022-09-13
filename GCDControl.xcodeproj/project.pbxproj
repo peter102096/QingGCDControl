@@ -25,6 +25,7 @@
 		AC4432F828BDB4CD00F118CA /* GCDControl.docc in Sources */ = {isa = PBXBuildFile; fileRef = AC4432F728BDB4CD00F118CA /* GCDControl.docc */; };
 		AC4432F928BDB4CD00F118CA /* GCDControl.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4432F628BDB4CD00F118CA /* GCDControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC44330028BDBFFF00F118CA /* GCDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4432FF28BDBFFF00F118CA /* GCDController.swift */; };
+		AC5D161828C8729D00FE65CA /* GCDControl.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AC5D161728C8729D00FE65CA /* GCDControl.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AC4432F628BDB4CD00F118CA /* GCDControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDControl.h; sourceTree = "<group>"; };
 		AC4432F728BDB4CD00F118CA /* GCDControl.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GCDControl.docc; sourceTree = "<group>"; };
 		AC4432FF28BDBFFF00F118CA /* GCDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDController.swift; sourceTree = "<group>"; };
+		AC5D161728C8729D00FE65CA /* GCDControl.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = GCDControl.podspec; sourceTree = SOURCE_ROOT; };
 		F7A3BF412D65437302BFDB5C /* Pods_GCDControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GCDControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,7 +57,6 @@
 				3729B97C379FA224AFD3CE41 /* Pods-GCDControl.debug.xcconfig */,
 				222A52A7044382F9DAEC48B2 /* Pods-GCDControl.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,8 +81,9 @@
 		AC4432F528BDB4CD00F118CA /* GCDControl */ = {
 			isa = PBXGroup;
 			children = (
-				AC4432F628BDB4CD00F118CA /* GCDControl.h */,
 				AC4432FF28BDBFFF00F118CA /* GCDController.swift */,
+				AC5D161728C8729D00FE65CA /* GCDControl.podspec */,
+				AC4432F628BDB4CD00F118CA /* GCDControl.h */,
 				AC4432F728BDB4CD00F118CA /* GCDControl.docc */,
 			);
 			path = GCDControl;
@@ -169,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5D161828C8729D00FE65CA /* GCDControl.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
