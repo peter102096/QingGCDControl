@@ -1,0 +1,6 @@
+framework module QingGCDControl {
+  umbrella header "QingGCDControl-umbrella.h"
+
+  export *
+  module * { export * }
+}

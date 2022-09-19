@@ -1,0 +1,22 @@
+{
+  "name": "QingGCDControl",
+  "version": "0.1.0",
+  "summary": "A short description of QingGCDControl.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/PeterLin/QingGCDControl",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "PeterLin": "peter102096@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/PeterLin/QingGCDControl.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "QingGCDControl/Classes/**/*"
+}

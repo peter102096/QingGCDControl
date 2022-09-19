@@ -1,0 +1,6 @@
+framework module Pods_QingGCDControl_Example {
+  umbrella header "Pods-QingGCDControl_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
