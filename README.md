@@ -1,6 +1,6 @@
 # QingGCDControl
 
-[![CI Status](https://img.shields.io/travis/PeterLin/QingGCDControl.svg?style=flat)](https://travis-ci.org/PeterLin/QingGCDControl)
+[![CI Status](https://img.shields.io/badge/Swift-5.5_5.6_5.7-Orange?style=flat)](https://img.shields.io/badge/Swift-5.5_5.6_5.7-Orange?style=flat)
 [![Version](https://img.shields.io/cocoapods/v/QingGCDControl.svg?style=flat)](https://cocoapods.org/pods/QingGCDControl)
 [![License](https://img.shields.io/cocoapods/l/QingGCDControl.svg?style=flat)](https://cocoapods.org/pods/QingGCDControl)
 [![Platform](https://img.shields.io/cocoapods/p/QingGCDControl.svg?style=flat)](https://cocoapods.org/pods/QingGCDControl)
