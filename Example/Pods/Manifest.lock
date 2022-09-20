@@ -9,13 +9,17 @@ PODS:
   - iOSSnapshotTestCase/Core (8.0.0)
   - iOSSnapshotTestCase/SwiftSupport (8.0.0):
     - iOSSnapshotTestCase/Core
+  - IQKeyboardManagerSwift (6.5.10)
+  - JGProgressHUD (2.2)
   - Nimble (10.0.0)
   - Nimble-Snapshots (9.4.0):
     - Nimble-Snapshots/Core (= 9.4.0)
   - Nimble-Snapshots/Core (9.4.0):
     - iOSSnapshotTestCase (~> 8.0)
     - Nimble
-  - QingGCDControl (0.1.0)
+  - QingGCDControl (0.0.3):
+    - IQKeyboardManagerSwift
+    - JGProgressHUD
   - Quick (2.2.1)
 
 DEPENDENCIES:
@@ -29,6 +33,8 @@ SPEC REPOS:
   trunk:
     - FBSnapshotTestCase
     - iOSSnapshotTestCase
+    - IQKeyboardManagerSwift
+    - JGProgressHUD
     - Nimble
     - Nimble-Snapshots
     - Quick
@@ -40,9 +46,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
-  QingGCDControl: 370c982caa8e67ff81e5b4628ca71e13a3cb41c5
+  QingGCDControl: 71a1a68520f14a2fbf4c10556b9a79d9b76cde2d
   Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
 
 PODFILE CHECKSUM: 2fdedc39cd32711568088f95a8f818051e8ce6a7

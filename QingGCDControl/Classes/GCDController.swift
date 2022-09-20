@@ -12,6 +12,8 @@ public class GCDController: NSObject {
     
     public let group = DispatchGroup()
     
+    public let version = "0.0.3"
+    
     private override init() {
         super.init()
     }

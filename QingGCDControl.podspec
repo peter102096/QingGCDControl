@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QingGCDControl'
-  s.version          = '0.0.3'
-  s.summary          = 'A short description of QingGCDControl.'
+  s.version          = '0.0.4'
+  s.summary          = 'The common tools with Swift.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-An extended description of GCDControl project.
+This sdk is the common tools with Swift.
+Like date, timezone, viewcontroller.
+And it also include IQKeyboardManagerSwift and JGProgressHUD.
                        DESC
 
   s.homepage         = 'https://github.com/peter102096/QingGCDControl'
@@ -26,7 +28,7 @@ An extended description of GCDControl project.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'peter102096' => 'peter102096@gmail.com' }
   s.source           = { :git => 'https://github.com/peter102096/QingGCDControl.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://github.com/peter102096'
 
   s.ios.deployment_target = '13.0'
 
