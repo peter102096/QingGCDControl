@@ -17,7 +17,7 @@ PODS:
   - Nimble-Snapshots/Core (9.4.0):
     - iOSSnapshotTestCase (~> 8.0)
     - Nimble
-  - QingGCDControl (0.0.3):
+  - QingGCDControl (0.0.4):
     - IQKeyboardManagerSwift
     - JGProgressHUD
   - Quick (2.2.1)
@@ -50,7 +50,7 @@ SPEC CHECKSUMS:
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
-  QingGCDControl: 71a1a68520f14a2fbf4c10556b9a79d9b76cde2d
+  QingGCDControl: b18de95bee4a7e0005001f0f4801bf597f1da18e
   Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
 
 PODFILE CHECKSUM: 2fdedc39cd32711568088f95a8f818051e8ce6a7
