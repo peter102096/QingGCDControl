@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-public class API: NSObject {
+open class API: NSObject {
     private let TAG = "API"
     public static let shared = API()
     private var trustIP: String = "0.0.0.0"

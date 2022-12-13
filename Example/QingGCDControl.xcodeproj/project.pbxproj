@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		AC1E259229486BEF00F8C83C /* APISubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1E259129486BEF00F8C83C /* APISubclass.swift */; };
 		AC6CA86828D9B45F00E8B9EC /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6CA86728D9B45F00E8B9EC /* SecondVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		8F76D9FC444CB19B2DC7A8D3 /* Pods-QingGCDControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingGCDControl_Tests.debug.xcconfig"; path = "Target Support Files/Pods-QingGCDControl_Tests/Pods-QingGCDControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC1E259129486BEF00F8C83C /* APISubclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISubclass.swift; sourceTree = "<group>"; };
 		AC6CA86728D9B45F00E8B9EC /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		B3ED1621C11AD42CC7DE5365 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B7C8385850A203CFD0F8AD2A /* Pods_QingGCDControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QingGCDControl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				AC1E259129486BEF00F8C83C /* APISubclass.swift */,
 			);
 			name = "Example for QingGCDControl";
 			path = QingGCDControl;
@@ -369,6 +372,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				AC6CA86828D9B45F00E8B9EC /* SecondVC.swift in Sources */,
+				AC1E259229486BEF00F8C83C /* APISubclass.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
