@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("\(TAG) \(GCDController.shared.version)")
+//        APISubclass.shared.publicIP
     }
 
     override func didReceiveMemoryWarning() {

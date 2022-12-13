@@ -10,9 +10,8 @@ import Alamofire
 
 open class API: NSObject {
     private let TAG = "API"
-    public static let shared = API()
     private(set) var trustIP: String = "0.0.0.0"
-    private(set) lazy var sharedSession: Session = {
+    private lazy var sharedSession: Session = {
         let manager = ServerTrustManager(evaluators: [trustIP: DisabledTrustEvaluator()])
            let configuration = URLSessionConfiguration.af.default
            configuration.timeoutIntervalForRequest = 30
@@ -20,7 +19,7 @@ open class API: NSObject {
        }()
     var statusCode: Int? = 404
     
-    private override init() {
+    public override init() {
         super.init()
     }
     
@@ -32,6 +31,10 @@ open class API: NSObject {
             configuration.timeoutIntervalForRequest = 30
             return Session(configuration: configuration, serverTrustManager: manager)
         }()
+    }
+    
+    public var publicIP: String {
+        return trustIP
     }
     
     public func connectToServer<T: Codable>(url: String, method: HTTPMethod = .get, dataStruct struct: T.Type, params: Parameters? = nil, completion: @escaping (Int?, Codable?) -> Void) {

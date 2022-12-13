@@ -10,6 +10,11 @@ import UIKit
 import QingGCDControl
 
 class APISubclass: API {
+    public static let shared = APISubclass()
+    
+    private override init() {
+        super.init()
+    }
     
     func login() {
         
