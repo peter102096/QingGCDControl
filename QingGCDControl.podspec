@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QingGCDControl'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'The common tools with Swift.'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,7 @@ And it also include IQKeyboardManagerSwift and JGProgressHUD.
 
   s.dependency 'IQKeyboardManagerSwift'
   s.dependency 'JGProgressHUD'
+  s.dependency 'Alamofire'
   s.platform = :ios, '13.0'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = "5.5"
