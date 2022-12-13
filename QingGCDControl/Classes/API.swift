@@ -11,8 +11,8 @@ import Alamofire
 open class API: NSObject {
     private let TAG = "API"
     public static let shared = API()
-    private var trustIP: String = "0.0.0.0"
-    private lazy var sharedSession: Session = {
+    private(set) var trustIP: String = "0.0.0.0"
+    private(set) lazy var sharedSession: Session = {
         let manager = ServerTrustManager(evaluators: [trustIP: DisabledTrustEvaluator()])
            let configuration = URLSessionConfiguration.af.default
            configuration.timeoutIntervalForRequest = 30
