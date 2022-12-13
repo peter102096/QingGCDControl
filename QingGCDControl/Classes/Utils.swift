@@ -7,19 +7,19 @@
 
 import UIKit
 
-extension String {
-    public var localized:String {
+public extension String {
+    var localized:String {
         return NSLocalizedString(self, comment: "")
     }
     
-    public func height(withConstrainedWidth width: CGFloat, font: UIFont = UIFont.systemFont(ofSize: 14)) -> CGFloat {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont = UIFont.systemFont(ofSize: 14)) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return ceil(boundingBox.height)
     }
     
-    public func splitPerChar(_ count: Int) -> String {
+    func splitPerChar(_ count: Int) -> String {
         let strArray = Array(self)
         var str = ""
         for i in 0..<strArray.count {
@@ -31,7 +31,7 @@ extension String {
         return str
     }
     
-    public func formatDate(_ type: Date.formatType, timeZone: TimeZone? = TimeZone(secondsFromGMT: 0)) -> Date? {
+    func formatDate(_ type: Date.formatType, timeZone: TimeZone? = TimeZone(secondsFromGMT: 0)) -> Date? {
         let formatter = DateFormatter()
         formatter.timeZone = timeZone
         switch type {
@@ -55,7 +55,7 @@ extension String {
         return formatter.date(from: self)
     }
     
-    public var macAddrFormat: String {
+    var macAddrFormat: String {
         let strArray = Array(self)
         var macAddr = ""
         for i in 0..<strArray.count {
@@ -67,16 +67,16 @@ extension String {
         return macAddr
     }
     
-    public var hexString: String {
+    var hexString: String {
         guard let data = self.data(using: .ascii) else { return "" }
         return data.map { String(format: "%02hhx", $0) }.joined()
     }
     
-    public var isHexNumber: Bool {
+    var isHexNumber: Bool {
         filter(\.isHexDigit).count == count
     }
     
-    public var asciiString: String {
+    var asciiString: String {
         if self == "00" { return "" }
         let chars = Array(self)
         
@@ -93,7 +93,7 @@ extension String {
         return final
     }
     
-    public var hex2ascii: String {
+    var hex2ascii: String {
         let strArray = Array(self)
         var asciiChar = ""
         var asciiStr = ""
@@ -108,7 +108,7 @@ extension String {
         return asciiStr
     }
     
-    public func hasFilter(regex: String) -> Bool? {
+    func hasFilter(regex: String) -> Bool? {
         do {
             let regexExp = try NSRegularExpression(pattern: regex, options: .caseInsensitive)
             let range = NSRange(location: 0, length: count)
@@ -123,7 +123,7 @@ extension String {
         }
     }
     
-    public func replace(for regex: String, with replaceWith: String) -> String {
+    func replace(for regex: String, with replaceWith: String) -> String {
         do {
             let regex = try NSRegularExpression(pattern: regex, options: .caseInsensitive)
             let range = NSRange(location: 0, length: count)
@@ -134,13 +134,13 @@ extension String {
         }
     }
     
-    public mutating func insert(string:String,index:Int) {
+    mutating func insert(string:String,index:Int) {
         self.insert(contentsOf: string, at: self.index(self.startIndex, offsetBy: index))
     }
 }
 
-extension Date {
-    public enum formatType {
+public extension Date {
+    enum formatType {
         case Date
         case Day
         case NonYear
@@ -151,7 +151,7 @@ extension Date {
         case NonSecTime
     }
     
-    public func formatStr(_ type: formatType, timeZone: TimeZone? = TimeZone(secondsFromGMT: 0)) -> String {
+    func formatStr(_ type: formatType, timeZone: TimeZone? = TimeZone(secondsFromGMT: 0)) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = timeZone
         switch type {
@@ -176,7 +176,7 @@ extension Date {
         return date
     }
     
-    public var localTime: String {
+    var localTime: String {
         let formatter = DateFormatter()
         formatter.timeZone = Global.deviceTimeZone
         formatter.dateFormat = Global.DateFormat
@@ -184,7 +184,7 @@ extension Date {
         return date
     }
     
-    public var exportTime: String {
+    var exportTime: String {
         let formatter = DateFormatter()
         formatter.timeZone = Global.deviceTimeZone
         formatter.dateFormat = Global.ExportFormat
@@ -193,22 +193,22 @@ extension Date {
     }
 }
 
-extension TimeInterval {
-    public var elapsedTimeAsString: String {
+public extension TimeInterval {
+    var elapsedTimeAsString: String {
         return String(format: "%02d:%02d'%d", Int(self / 60), Int(self.truncatingRemainder(dividingBy: 60)), Int((self * 10).truncatingRemainder(dividingBy: 10)))
     }
     
-    public var seconds: Int {
+    var seconds: Int {
         return Int(self.rounded())
     }
-
-    public var milliseconds: Int {
+    
+    var milliseconds: Int {
         return Int(self * 1_000)
     }
 }
 
-extension Locale {
-    public static var preferredLanguageCode: String {
+public extension Locale {
+    static var preferredLanguageCode: String {
         guard let preferredLanguage = preferredLanguages.first,
               let code = Locale(identifier: preferredLanguage).languageCode else {
             return "en"
@@ -216,11 +216,11 @@ extension Locale {
         return code
     }
     
-    public static var preferredLanguageCodes: [String] {
+    static var preferredLanguageCodes: [String] {
         return Locale.preferredLanguages.compactMap({Locale(identifier: $0).languageCode})
     }
     
-    public static var preferredLanguage: String {
+    static var preferredLanguage: String {
         guard let preLau = Locale.preferredLanguages.first else {
             return "en"
         }

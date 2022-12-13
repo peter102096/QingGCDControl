@@ -8,9 +8,9 @@
 import UIKit
 import Alamofire
 
-class API: NSObject {
+public class API: NSObject {
     private let TAG = "API"
-    static let shared = API()
+    public static let shared = API()
     private let trustIP: String
     private lazy var sharedSession: Session = {
         let manager = ServerTrustManager(evaluators: [trustIP: DisabledTrustEvaluator()])
@@ -20,11 +20,11 @@ class API: NSObject {
        }()
     var statusCode: Int? = 404
     
-    init(trustIP: String = "0.0.0.0") {
+    public init(trustIP: String = "0.0.0.0") {
         self.trustIP = trustIP
     }
     
-    func connectToServer<T: Codable>(url: String, method: HTTPMethod = .get, dataStruct struct: T.Type, params: Parameters? = nil, completion: @escaping (Int?, Codable?) -> Void) {
+    public func connectToServer<T: Codable>(url: String, method: HTTPMethod = .get, dataStruct struct: T.Type, params: Parameters? = nil, completion: @escaping (Int?, Codable?) -> Void) {
         
         sharedSession.request(url, method: method, parameters: params).responseJSON(completionHandler: {
             [self] data in

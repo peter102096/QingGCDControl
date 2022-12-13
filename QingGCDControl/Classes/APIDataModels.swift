@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 // MARK: - ResultModel
-struct ResultModel: Codable {
+public struct ResultModel: Codable {
     let result: String
 }
