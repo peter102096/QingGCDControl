@@ -1,6 +1,6 @@
 {
   "name": "QingGCDControl",
-  "version": "0.0.6",
+  "version": "0.0.12",
   "summary": "The common tools with Swift.",
   "description": "This sdk is the common tools with Swift.\nLike date, timezone, viewcontroller.\nAnd it also include IQKeyboardManagerSwift and JGProgressHUD.",
   "homepage": "https://github.com/peter102096/QingGCDControl",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/peter102096/QingGCDControl.git",
-    "tag": "0.0.6"
+    "tag": "0.0.12"
   },
   "social_media_url": "https://github.com/peter102096",
   "platforms": {
@@ -22,13 +22,13 @@
   "source_files": "QingGCDControl/Classes/**/*",
   "dependencies": {
     "IQKeyboardManagerSwift": [
-
+      "6.5.10"
     ],
     "JGProgressHUD": [
-
+      "2.2"
     ],
     "Alamofire": [
-
+      "5.6.4"
     ]
   },
   "pod_target_xcconfig": {

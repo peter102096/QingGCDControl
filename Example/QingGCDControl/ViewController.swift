@@ -19,6 +19,11 @@ class ViewController: UIViewController {
         print("\(TAG) \(GCDController.shared.version)")
 //        APISubclass.shared.publicIP
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,8 +31,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func nextBtnAction(_ sender: Any) {
-        let vc = SecondVC.fromStoryBoard()
-        push(vc: vc)
+        APISubclass.shared.login { (state) in
+            if state {
+                DispatchQueue.main.async {
+                    let vc = SecondVC.fromStoryBoard()
+                    self.push(vc: vc)
+                }
+            }
+        }
     }
 }
 

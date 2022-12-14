@@ -10,7 +10,8 @@ import Alamofire
 
 open class API: NSObject {
     private let TAG = "API"
-    private(set) var trustIP: String = "0.0.0.0"
+    private var trustIP: String = "0.0.0.0"
+    private var trustPort: Int = 443
     private lazy var sharedSession: Session = {
         let manager = ServerTrustManager(evaluators: [trustIP: DisabledTrustEvaluator()])
            let configuration = URLSessionConfiguration.af.default
@@ -23,8 +24,9 @@ open class API: NSObject {
         super.init()
     }
     
-    public func setIP(trustIP: String) {
+    public func setAddress(trustIP: String, port: Int) {
         self.trustIP = trustIP
+        self.trustPort = port
         sharedSession = {
             let manager = ServerTrustManager(evaluators: [trustIP: DisabledTrustEvaluator()])
             let configuration = URLSessionConfiguration.af.default
@@ -33,14 +35,14 @@ open class API: NSObject {
         }()
     }
     
-    public var publicIP: String {
-        return trustIP
+    public var publicAddress: String {
+        return "\(trustIP):\(trustPort)"
     }
     
-    public func connectToServer<T: Codable>(url: String, method: HTTPMethod = .get, dataStruct struct: T.Type, params: Parameters? = nil, completion: @escaping (Int?, Codable?) -> Void) {
-        
-        sharedSession.request(url, method: method, parameters: params).responseJSON(completionHandler: {
-            [self] data in
+    public func connectToServer<T: Codable>(url: String, method: HTTPMethod = .get, dataStruct struct: T.Type, params: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (Int?, Codable?) -> Void) {
+
+        sharedSession.request(url, method: method, parameters: params, encoding: encoding).responseJSON { [unowned self] (data) in
+            print("data : \(data)")
             statusCode = data.response?.statusCode
             print("statusCode : \(statusCode ?? 9999)")
             guard data.error == nil else {
@@ -59,6 +61,6 @@ open class API: NSObject {
                 completion(statusCode, result)
                 return
             }
-        })
+        }
     }
 }

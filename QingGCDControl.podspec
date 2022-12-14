@@ -34,9 +34,9 @@ And it also include IQKeyboardManagerSwift and JGProgressHUD.
 
   s.source_files = 'QingGCDControl/Classes/**/*'
 
-  s.dependency 'IQKeyboardManagerSwift'
-  s.dependency 'JGProgressHUD'
-  s.dependency 'Alamofire'
+  s.dependency 'IQKeyboardManagerSwift', '6.5.10'
+  s.dependency 'JGProgressHUD', '2.2'
+  s.dependency 'Alamofire', '5.6.4'
   s.platform = :ios, '13.0'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = "5.5"
