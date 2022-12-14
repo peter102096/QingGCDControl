@@ -32,15 +32,6 @@ class ViewController: UIViewController {
 
     @IBAction func nextBtnAction(_ sender: Any) {
         LoadingView.shared.show(in: view)
-        APISubclass.shared.login { (state) in
-            LoadingView.shared.dismiss()
-            if state {
-                DispatchQueue.main.async {
-                    let vc = SecondVC.fromStoryBoard()
-                    self.push(vc: vc)
-                }
-            }
-        }
     }
 }
 

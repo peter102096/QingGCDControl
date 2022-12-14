@@ -20,6 +20,8 @@ open class API: NSObject {
     }()
     var statusCode: Int? = 404
     
+    private var authHeader: HTTPHeader? = nil
+    
     public override init() {
         super.init()
     }
@@ -39,9 +41,33 @@ open class API: NSObject {
         return "\(trustIP):\(trustPort)"
     }
     
+    public func setAuthHeader(token: String) {
+        authHeader = HTTPHeader.authorization(token)
+    }
+    
+    public func setAuthHeader(bearerToken: String) {
+        authHeader = HTTPHeader.authorization(bearerToken: bearerToken)
+    }
+    
+    public func setAuthHeader(username: String, password: String) {
+        authHeader = HTTPHeader.authorization(username: username, password: password)
+    }
+    
+    public func removeAuthHeader() {
+        authHeader = nil
+    }
+    
     public func connectToServer<T: Codable>(url: String, method: HTTPMethod = .get, dataStruct struct: T.Type, params: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (Int?, Codable?) -> Void) {
         statusCode = 404
-        sharedSession.request(url, method: method, parameters: params, encoding: encoding).responseDecodable(of: T.self) { [unowned self] (data) in
+        let headers: HTTPHeaders?
+        
+        if authHeader != nil {
+            headers = HTTPHeaders([authHeader!])
+        } else {
+            headers = nil
+        }
+        
+        sharedSession.request(url, method: method, parameters: params, encoding: encoding, headers: headers).responseDecodable(of: T.self) { [unowned self] (data) in
             statusCode = data.response?.statusCode
             print("statusCode : \(statusCode ?? 9999)")
             switch data.result {
