@@ -40,7 +40,7 @@ open class API: NSObject {
     }
     
     public func connectToServer<T: Codable>(url: String, method: HTTPMethod = .get, dataStruct struct: T.Type, params: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (Int?, Codable?) -> Void) {
-        
+        statusCode = 404
         sharedSession.request(url, method: method, parameters: params, encoding: encoding).responseDecodable(of: T.self) { [unowned self] (data) in
             statusCode = data.response?.statusCode
             print("statusCode : \(statusCode ?? 9999)")
